@@ -4,7 +4,6 @@
 import java.util.Arrays;
 import java.util.Objects;
 
-// Class Word
 class Word {
     private String value;
 
@@ -31,7 +30,6 @@ class Word {
     }
 }
 
-// Class Sentence
 class Sentence {
     private Word[] words;
     private int wordCount;
@@ -73,7 +71,6 @@ class Sentence {
     }
 }
 
-// Class Text
 class Text {
     private String title;
     private Sentence[] sentences;
@@ -131,7 +128,6 @@ class Text {
     }
 }
 
-// Example usage
 public class Main {
     public static void main(String[] args) {
         Word word1 = new Word("Привет");
