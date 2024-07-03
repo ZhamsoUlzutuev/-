@@ -9,7 +9,7 @@ public class LetterModification {
         this.connection = DatabaseConnection.getConnection();
     }
 
-    // Метод для удаления старых писем
+
     public boolean deleteOldLetters(Date thresholdDate) throws SQLException {
         String query = "DELETE FROM letters WHERE send_date < ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -18,7 +18,7 @@ public class LetterModification {
         }
     }
 
-    // Остальные методы...
+
     public boolean addUser(String fullName, Date birthDate) throws SQLException {
         String checkQuery = "SELECT COUNT(*) FROM users WHERE full_name = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(checkQuery)) {
