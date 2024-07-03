@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariff>
+    <Plan>
+        <Name>Тариф А</Name>
+        <OperatorName>Оператор 1</OperatorName>
+        <Payroll>200</Payroll>
+        <CallPrices>
+            <InNetwork>1.0</InNetwork>
+            <OutNetwork>1.5</OutNetwork>
+            <Landline>2.0</Landline>
+        </CallPrices>
+        <SMSPrice>1.0</SMSPrice>
+        <Parameters>
+            <FavoriteNumber>3</FavoriteNumber>
+            <Billing>pominute</Billing>
+            <ConnectionFee>50</ConnectionFee>
+        </Parameters>
+    </Plan>
+    <Plan>
+        <Name>Тариф B</Name>
+        <OperatorName>Оператор 2</OperatorName>
+        <Payroll>300</Payroll>
+        <CallPrices>
+            <InNetwork>0.8</InNetwork>
+            <OutNetwork>1.2</OutNetwork>
+            <Landline>1.8</Landline>
+        </CallPrices>
+        <SMSPrice>1.1</SMSPrice>
+        <Parameters>
+            <FavoriteNumber>5</FavoriteNumber>
+            <Billing>12-second</Billing>
+            <ConnectionFee>0</ConnectionFee>
+        </Parameters>
+    </Plan>
+
+</Tariff>
