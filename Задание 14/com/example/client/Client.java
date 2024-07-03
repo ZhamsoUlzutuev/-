@@ -38,7 +38,6 @@ public class Client {
 
             System.out.println("Image sent successfully.");
 
-            // Create a new thread to listen for incoming messages
             new Thread(() -> {
                 try {
                     while (true) {
@@ -60,7 +59,6 @@ public class Client {
                 }
             }).start();
 
-            // Keep the main thread alive
             while (true) {
                 Thread.sleep(1000);
             }
