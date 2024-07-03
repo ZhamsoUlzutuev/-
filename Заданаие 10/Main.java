@@ -1,34 +1,28 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+/*В каждой строке найти и удалить заданную подстроку.*/
+
+import java.io.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Проверяем, что параметры командной строки переданы правильно
-        if (args.length < 3) {
-            System.out.println("Usage: java Main <inputFilePath> <outputFilePath> <substring>");
-            return;
-        }
-
-        String inputFilePath = args[0];
-        String outputFilePath = args[1];
-        String substringToRemove = args[2];
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFilePath));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath))) {
-
+        String input_filename = "input.txt";
+        String output_filename = "output.txt";
+        String remove = "Java";
+        try {
+            FileReader file_read = new FileReader(new File(input_filename));
+            BufferedReader reader = new BufferedReader(file_read);
+            FileWriter file_write = new FileWriter(new File(output_filename));
+            BufferedWriter writer = new BufferedWriter(file_write);
             String line;
             while ((line = reader.readLine()) != null) {
-                // Удаляем подстроку из текущей строки
-                String modifiedLine = line.replace(substringToRemove, "");
-                // Записываем измененную строку в выходной файл
-                writer.write(modifiedLine);
-                writer.newLine();
+                String modified_line = line.replaceAll(remove, "");
+                writer.write(modified_line + "\n");
             }
+            reader.close();
+            writer.close();
+            System.out.println("Подстроки удалены.");
         } catch (IOException e) {
-            System.err.println("Ошибка при работе с файлами: " + e.getMessage());
+            System.err.println("Ошибка: " + e.getMessage());
         }
     }
 }
